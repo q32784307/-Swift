@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>class</key>
+		<string>LSChatHomeViewController</string>
+		<key>title</key>
+		<string>微信</string>
+		<key>image</key>
+		<string>tabbar_ chat</string>
+		<key>selectedImage</key>
+		<string>tabbar_ chat_selected</string>
+	</dict>
+	<dict>
+		<key>class</key>
+		<string>LSAddressHomeViewController</string>
+		<key>title</key>
+		<string>通讯录</string>
+		<key>image</key>
+		<string>tabbar_address</string>
+		<key>selectedImage</key>
+		<string>tabbar_address_selected</string>
+	</dict>
+	<dict>
+		<key>class</key>
+		<string>LSFoundHomeViewController</string>
+		<key>title</key>
+		<string>发现</string>
+		<key>image</key>
+		<string>tabbar_ found</string>
+		<key>selectedImage</key>
+		<string>tabbar_ found_selected</string>
+	</dict>
+	<dict>
+		<key>class</key>
+		<string>LSMeHomeViewController</string>
+		<key>title</key>
+		<string>我</string>
+		<key>image</key>
+		<string>tabbar_me</string>
+		<key>selectedImage</key>
+		<string>tabbar_me_selected</string>
+	</dict>
+</array>
+</plist>

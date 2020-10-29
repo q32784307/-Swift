@@ -1,0 +1,19 @@
+# source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, '10.0'
+
+target 'GenericProjectForSwift' do
+  use_frameworks!
+
+  pod 'SnapKit'
+  pod 'Alamofire'
+  pod 'SwiftyJSON'
+  pod 'IQKeyboardManagerSwift'
+  pod 'ReachabilitySwift'
+  pod 'EmptyDataSet-Swift'
+  pod 'YYKit'
+  pod 'MJRefresh'
+  pod 'SVProgressHUD'
+  pod 'IDealist'
+  pod 'AttributedString'
+  pod 'ReactiveSwift'
+end
