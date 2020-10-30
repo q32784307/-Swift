@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LSFoundHomeViewController: LSBaseViewController {
+class LSFoundHomeViewController: LSBaseViewController,UITableViewDelegate,UITableViewDataSource {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +29,49 @@ class LSFoundHomeViewController: LSBaseViewController {
     }
     
     override func createSubViews() {
+        mainTableView.delegate = self
+        mainTableView.dataSource = self
+        mainTableView.register(UITableViewCell.self, forCellReuseIdentifier: "TableViewCell")
+        self.view.addSubview(mainTableView)
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        var cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell")
+        if cell != nil {
+            cell = UITableViewCell.init(style: UITableViewCell.CellStyle.default, reuseIdentifier: "TableViewCell")
+            cell?.textLabel?.font = SystemFont(FONTSIZE: SYRealValue(value: 30 / 2))
+            cell?.accessoryType = UITableViewCell.AccessoryType.disclosureIndicator
+            cell?.selectionStyle = UITableViewCell.SelectionStyle.none
+        }
         
+        if indexPath.row == 0 {
+            cell?.textLabel?.text = "朋友圈"
+        }
+        
+        return cell!
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.row == 0 {
+            let LSCircleFriendsVC = LSCircleFriendsViewController.init()
+            self.navigationController?.pushViewController(LSCircleFriendsVC, animated: true)
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return SYRealValue(value: 100 / 2)
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return CGFloat.leastNormalMagnitude
     }
     
 

@@ -33,7 +33,7 @@ class LSBaseViewController: UIViewController {
         tableView.estimatedRowHeight = 0
         tableView.estimatedSectionHeaderHeight = 0
         tableView.estimatedSectionFooterHeight = 0
-        tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
+//        tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
         tableView.backgroundColor = UIColor.init(hexString: "EDEDED")
         
         return tableView

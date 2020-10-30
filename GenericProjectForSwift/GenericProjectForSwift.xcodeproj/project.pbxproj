@@ -11,6 +11,11 @@
 		796A9D59254ABE3200AC9522 /* LSAddressHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796A9D58254ABE3200AC9522 /* LSAddressHomeViewController.swift */; };
 		796A9D5C254ABE4E00AC9522 /* LSFoundHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796A9D5B254ABE4E00AC9522 /* LSFoundHomeViewController.swift */; };
 		796A9D5F254ABE5E00AC9522 /* LSMeHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796A9D5E254ABE5E00AC9522 /* LSMeHomeViewController.swift */; };
+		799F3741254C12750045251E /* LSChatHomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799F3740254C12750045251E /* LSChatHomeTableViewCell.swift */; };
+		799F3765254C1DDF0045251E /* LSChatDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799F3764254C1DDF0045251E /* LSChatDetailsViewController.swift */; };
+		799F3768254C1E920045251E /* LSChatDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799F3767254C1E920045251E /* LSChatDetailsTableViewCell.swift */; };
+		799F376B254C21D30045251E /* LSChatUserInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799F376A254C21D30045251E /* LSChatUserInformationViewController.swift */; };
+		799F376E254C2D4B0045251E /* LSCircleFriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799F376D254C2D4B0045251E /* LSCircleFriendsViewController.swift */; };
 		82BCB2882469955100356334 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82BCB2872469955100356334 /* Launch Screen.storyboard */; };
 		D00E729223AE2A2F001BF3E4 /* GenericProjectForSwift_PrefixHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00E729123AE2A2F001BF3E4 /* GenericProjectForSwift_PrefixHeader.swift */; };
 		D00E729423AE2A4F001BF3E4 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00E729323AE2A4F001BF3E4 /* AppConfig.swift */; };
@@ -37,6 +42,11 @@
 		796A9D58254ABE3200AC9522 /* LSAddressHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LSAddressHomeViewController.swift; sourceTree = "<group>"; };
 		796A9D5B254ABE4E00AC9522 /* LSFoundHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LSFoundHomeViewController.swift; sourceTree = "<group>"; };
 		796A9D5E254ABE5E00AC9522 /* LSMeHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LSMeHomeViewController.swift; sourceTree = "<group>"; };
+		799F3740254C12750045251E /* LSChatHomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LSChatHomeTableViewCell.swift; sourceTree = "<group>"; };
+		799F3764254C1DDF0045251E /* LSChatDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LSChatDetailsViewController.swift; sourceTree = "<group>"; };
+		799F3767254C1E920045251E /* LSChatDetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LSChatDetailsTableViewCell.swift; sourceTree = "<group>"; };
+		799F376A254C21D30045251E /* LSChatUserInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LSChatUserInformationViewController.swift; sourceTree = "<group>"; };
+		799F376D254C2D4B0045251E /* LSCircleFriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LSCircleFriendsViewController.swift; sourceTree = "<group>"; };
 		82BCB2872469955100356334 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		B2B9E033089EDEEB812B2869 /* Pods_GenericProjectForSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GenericProjectForSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D00E729123AE2A2F001BF3E4 /* GenericProjectForSwift_PrefixHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericProjectForSwift_PrefixHeader.swift; sourceTree = "<group>"; };
@@ -127,6 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				796A9D5B254ABE4E00AC9522 /* LSFoundHomeViewController.swift */,
+				799F376D254C2D4B0045251E /* LSCircleFriendsViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -191,6 +202,8 @@
 			isa = PBXGroup;
 			children = (
 				796A9D54254ABE1100AC9522 /* LSChatHomeViewController.swift */,
+				799F3764254C1DDF0045251E /* LSChatDetailsViewController.swift */,
+				799F376A254C21D30045251E /* LSChatUserInformationViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -205,6 +218,8 @@
 		796A9D53254ABDD500AC9522 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				799F3740254C12750045251E /* LSChatHomeTableViewCell.swift */,
+				799F3767254C1E920045251E /* LSChatDetailsTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -466,16 +481,21 @@
 				796A9D55254ABE1100AC9522 /* LSChatHomeViewController.swift in Sources */,
 				D00E729223AE2A2F001BF3E4 /* GenericProjectForSwift_PrefixHeader.swift in Sources */,
 				D00E729423AE2A4F001BF3E4 /* AppConfig.swift in Sources */,
+				799F3741254C12750045251E /* LSChatHomeTableViewCell.swift in Sources */,
 				D0895F1A23B5DD1000FA8036 /* NSString+RegularExpression.swift in Sources */,
 				796A9D59254ABE3200AC9522 /* LSAddressHomeViewController.swift in Sources */,
 				796A9D5C254ABE4E00AC9522 /* LSFoundHomeViewController.swift in Sources */,
+				799F3765254C1DDF0045251E /* LSChatDetailsViewController.swift in Sources */,
 				D0FB657223B20B94006094FE /* LSNetworkRequest.swift in Sources */,
 				D0FB657023B1F31F006094FE /* UIView+LSExtension.swift in Sources */,
 				D08A582A239641D3000AF979 /* LSBaseNavigationViewController.swift in Sources */,
+				799F376B254C21D30045251E /* LSChatUserInformationViewController.swift in Sources */,
 				D00E729623AE3F52001BF3E4 /* LSBaseNavigationView.swift in Sources */,
+				799F3768254C1E920045251E /* LSChatDetailsTableViewCell.swift in Sources */,
 				D00E729923AE4AF5001BF3E4 /* LSBaseViewController.swift in Sources */,
 				D0D89DAE2392082200B0E5BA /* LSBaseTabBarViewController.swift in Sources */,
 				D0D89D952392006C00B0E5BA /* AppDelegate.swift in Sources */,
+				799F376E254C2D4B0045251E /* LSCircleFriendsViewController.swift in Sources */,
 				D0895F1623B5D23200FA8036 /* UIColor+LSColor.swift in Sources */,
 				796A9D5F254ABE5E00AC9522 /* LSMeHomeViewController.swift in Sources */,
 			);

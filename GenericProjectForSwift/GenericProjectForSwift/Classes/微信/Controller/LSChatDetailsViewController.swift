@@ -1,14 +1,14 @@
 //
-//  LSChatHomeViewController.swift
+//  LSChatDetailsViewController.swift
 //  GenericProjectForSwift
 //
-//  Created by 社科塞斯 on 2020/10/29.
+//  Created by 社科塞斯 on 2020/10/30.
 //  Copyright © 2020 漠然丶情到深处. All rights reserved.
 //
 
 import UIKit
 
-class LSChatHomeViewController: LSBaseViewController,UITableViewDelegate,UITableViewDataSource {
+class LSChatDetailsViewController: LSBaseViewController,UITableViewDelegate,UITableViewDataSource {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,8 +20,13 @@ class LSChatHomeViewController: LSBaseViewController,UITableViewDelegate,UITable
     }
     
     func setNavigation() {
-        navView.titleLabelText = "微信"
-        navView.isShowLeftButton = true
+        navView.titleLabelText = "离散"
+        navView.rightButton.isHidden = false
+        navView.rightButtonImage = "more_black"
+        navView.rightActionBlock = {() -> Void in
+            let LSChatUserInformationVC = LSChatUserInformationViewController.init()
+            self.navigationController?.pushViewController(LSChatUserInformationVC, animated: true)
+        }
     }
     
     override func analysis() {
@@ -31,10 +36,13 @@ class LSChatHomeViewController: LSBaseViewController,UITableViewDelegate,UITable
     override func createSubViews() {
         mainTableView.delegate = self
         mainTableView.dataSource = self
-        mainTableView.separatorStyle = UITableViewCell.SeparatorStyle.singleLine
-        mainTableView.separatorInset = UIEdgeInsets(top: 0, left: SYRealValue(value: 150 / 2), bottom: 0, right: 0)
-        mainTableView.register(LSChatHomeTableViewCell.self, forCellReuseIdentifier: "LSChatHomeTableViewCell")
+        mainTableView.separatorStyle = UITableViewCell.SeparatorStyle.none
+        mainTableView.register(LSChatDetailsTableViewCell.self, forCellReuseIdentifier: "LSChatDetailsTableViewCell")
         self.view.addSubview(mainTableView)
+        
+        let bgImageView = UIImageView.init(frame: self.view.bounds)
+        bgImageView.image = UIImage.init(named: "背景图")
+        self.mainTableView.backgroundView = bgImageView
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -46,9 +54,9 @@ class LSChatHomeViewController: LSBaseViewController,UITableViewDelegate,UITable
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCell(withIdentifier: "LSChatHomeTableViewCell")
+        var cell = tableView.dequeueReusableCell(withIdentifier: "LSChatDetailsTableViewCell")
         if cell != nil {
-            cell = LSChatHomeTableViewCell.init(style: LSChatHomeTableViewCell.CellStyle.default, reuseIdentifier: "LSChatHomeTableViewCell")
+            cell = LSChatDetailsTableViewCell.init(style: LSChatDetailsTableViewCell.CellStyle.default, reuseIdentifier: "LSChatDetailsTableViewCell")
             cell?.selectionStyle = UITableViewCell.SelectionStyle.none
         }
         
@@ -58,12 +66,11 @@ class LSChatHomeViewController: LSBaseViewController,UITableViewDelegate,UITable
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let LSChatDetailsVC = LSChatDetailsViewController.init()
-        self.navigationController?.pushViewController(LSChatDetailsVC, animated: true)
+        
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return SYRealValue(value: 140 / 2)
+        return SYRealValue(value: 80 / 2)
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {

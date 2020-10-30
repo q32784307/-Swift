@@ -47,7 +47,7 @@ class LSBaseTabBarViewController: UITabBarController,UITabBarControllerDelegate 
         vc.tabBarItem.title = title
         
         if #available(iOS 13.0, *) {
-            UITabBar.appearance().tintColor = RedColor
+            UITabBar.appearance().tintColor = UIColor.init(hexString: "57BD6A")
         }
             
         //未选中状态
