@@ -8,7 +8,11 @@
 
 import UIKit
 
-class LSChatHomeViewController: LSBaseViewController,UITableViewDelegate,UITableViewDataSource {
+class LSChatHomeViewController: LSBaseViewController,UITableViewDelegate,UITableViewDataSource, UISearchBarDelegate, UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        
+    }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +39,44 @@ class LSChatHomeViewController: LSBaseViewController,UITableViewDelegate,UITable
         mainTableView.separatorInset = UIEdgeInsets(top: 0, left: SYRealValue(value: 150 / 2), bottom: 0, right: 0)
         mainTableView.register(LSChatHomeTableViewCell.self, forCellReuseIdentifier: "LSChatHomeTableViewCell")
         self.view.addSubview(mainTableView)
+
+        
+        // 创建searchResultVC
+        let searchVC = UIViewController()
+        
+        
+        
+        let searchController = UISearchController(searchResultsController: nil)
+        // 设置背景颜色
+        searchController.view.backgroundColor = UIColor(red: 0.97, green: 0.97, blue: 0.97, alpha: 1.00)
+         //默认为YES,设置开始搜索时背景显示与否
+         searchController.dimsBackgroundDuringPresentation = false
+         //默认为YES,控制搜索时，是否隐藏导航栏
+         searchController.hidesNavigationBarDuringPresentation = false
+        
+        searchController.searchResultsUpdater = self
+        // 设置开始搜索时导航条是否隐藏
+        searchController.hidesNavigationBarDuringPresentation = false
+        // 设置开始搜索时背景是否显示
+        
+        searchController.searchBar.searchBarStyle = .minimal
+        
+        // 将搜索框视图设置为tableView的tableHeaderView
+        mainTableView.tableHeaderView = searchController.searchBar
+
+//        // 搜索框
+//        let bar = searchController.searchBar
+//        // 样式
+//        bar.barStyle = .default
+//        // 设置光标及取消按钮的颜色
+//        bar.tintColor = UIColor(red: 0.12, green: 0.74, blue: 0.13, alpha: 1.00)
+//        // 设置代理
+//        bar.delegate = self
+//        // 去除背景及上下两条横线
+//        bar.setBackgroundImage(UIImage(), for: .any, barMetrics: .default)
+//        // 右侧语音
+//        bar.showsBookmarkButton = true
+//        bar.setImage(UIImage(), for: .bookmark, state: .normal)
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
